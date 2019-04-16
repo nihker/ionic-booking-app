@@ -8,15 +8,15 @@ const routes: Routes = [
         component: PlacesPage,
         children: [
             {
-                path: 'search',
+                path: 'discover',
                 children: [
                     {
                         path: '',
-                        loadChildren: './search/search.module#SearchPageModule'
+                        loadChildren: './discover/discover.module#DiscoverPageModule'
                     },
                     {
                         path: ':placeId',
-                        loadChildren: './search/place-detail/place-detail.module#PlaceDetailPageModule'
+                        loadChildren: './discover/place-detail/place-detail.module#PlaceDetailPageModule'
                     }
                 ]
             },
@@ -37,20 +37,20 @@ const routes: Routes = [
                     },
                     {
                         path: ':placeId',
-                        loadChildren: './offers/offers-bookings/offers-bookings.module#OfferBookingsPageModule'
+                        loadChildren: './offers/offer-bookings/offer-bookings.module#OfferBookingsPageModule'
                     }
                 ]
             },
             {
                 path: '',
-                redirectTo: '/places/tabs/search',
+                redirectTo: '/places/tabs/discover',
                 pathMatch: 'full'
             }
         ]
     },
     {
         path: '',
-        redirectTo: '/places/tabs/search',
+        redirectTo: '/places/tabs/discover',
         pathMatch: 'full'
     }
 ];

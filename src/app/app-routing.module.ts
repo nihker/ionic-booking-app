@@ -11,8 +11,8 @@ const routes: Routes = [
     canLoad: [AuthGuard]
   },
   {
-    path: "boookings",
-    loadChildren: "./boookings/boookings.module#BoookingsPageModule",
+    path: "bookings",
+    loadChildren: "./bookings/bookings.module#BookingsPageModule",
     canLoad: [AuthGuard]
   }
 ];

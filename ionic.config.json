@@ -1,5 +1,6 @@
 {
   "name": "booking-app",
   "integrations": {},
-  "type": "angular"
+  "type": "angular",
+  "id": "001eb48b"
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-auth',
@@ -9,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class AuthPage implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, loadingCtrl: LoadingController) { }
 
   ngOnInit() {
   }
@@ -17,6 +19,12 @@ export class AuthPage implements OnInit {
   onLogin() {
     this.authService.login();
     this.router.navigateByUrl('/places');
+  }
+
+
+
+  onSubmit(form: NgForm) {
+    console.log(form);
   }
 
 }

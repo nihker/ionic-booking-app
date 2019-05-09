@@ -10,6 +10,7 @@ import { LoadingController } from '@ionic/angular';
   styleUrls: ['./auth.page.scss'],
 })
 export class AuthPage implements OnInit {
+  isLogin = true;
 
   constructor(private authService: AuthService, private router: Router, loadingCtrl: LoadingController) { }
 
@@ -21,10 +22,12 @@ export class AuthPage implements OnInit {
     this.router.navigateByUrl('/places');
   }
 
-
-
   onSubmit(form: NgForm) {
     console.log(form);
+  }
+
+  onSwitchAuthMode(){
+    this.isLogin = !this.isLogin;
   }
 
 }

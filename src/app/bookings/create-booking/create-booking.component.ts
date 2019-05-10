@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, ViewChild } from "@angular/core";
 import { Place } from "src/app/places/place.model";
 import { ModalController } from "@ionic/angular";
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: "app-create-booking",
@@ -9,6 +10,7 @@ import { ModalController } from "@ionic/angular";
 })
 export class CreateBookingComponent implements OnInit {
   @Input() selectedPlace: Place;
+  @ViewChild('f') form: NgForm;
 
   constructor(private modalContrl: ModalController) {}
 
@@ -20,5 +22,15 @@ export class CreateBookingComponent implements OnInit {
 
   onCancel() {
     this.modalContrl.dismiss("detailModel", "cancel");
+  }
+
+  onBookPlace() {
+
+  }
+
+  datesValid() {
+    const startDate = new Date(this.form.value['date-form']);
+    const endDate = new Date(this.form.value['date-to']);
+    return endDate < startDate;
   }
 }

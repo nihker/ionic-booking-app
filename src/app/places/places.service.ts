@@ -6,6 +6,9 @@ import { AuthService } from '../auth/auth.service';
   providedIn: "root"
 })
 export class PlacesService {
+
+  constructor(private authService: AuthService) {}
+
   private _places: Place[] = [
     new Place(
       'p1',
@@ -61,7 +64,7 @@ export class PlacesService {
         );
 
         this._places.push(newPlace)
+
   }
 
-  constructor(private authService: AuthService) {}
 }
